@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock paper scissors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Welcome to the game.</h1>
+  <p>Read the rules below then make a selection</p><br>
+  <p>Rock beats scissors</p>
+  <p>Paper beats rock</p>
+  <p>Scissors beats paper</p>
+<div id='buttons'>
+  <button id='rock'>ROCK</button>
+  <button id='paper'>PAPER</button>
+  <button id='scissors'>SCISSORS</button>
+</div>
+<div id="gameContainer"></div>
+
+<script type="text/javascript">
+
+let playerScore=0;
+let computerScore=0;
+let playerSelection=''
+let computerSelection=''
+ 
+
+function computerPlay()
+{
+  let choices =['rock','paper','scissors'];
+
+  return choices[Math.floor(Math.random()*3)];
+}
+
+//take this to playround function;
+//same as the player selection.dont declare with variables
+
+
+//when you export to html, replace return with prompt... 
+
+function playRound(playerSelection,computerSelection)
+{     
+  if (playerSelection == 'rock' && computerSelection=='scissors'||
+    playerSelection=='paper'&& computerSelection=='rock'||
+    playerSelection=='scissors' && computerSelection=='paper')
+  {
+    
+    return 1;
+  } else if(playerSelection == 'rock'&& computerSelection=='paper'||
+        playerSelection=='paper'&& computerSelection=='scissors'||
+        playerSelection=='scissors'&& computerSelection=='rock')
+  {
+    
+    return 2;
+  }else
+  {
+    return 0;
+  }
+};
+ //call the function outside..when you export to html, dont call 
+
+
+
+
+
+function game()
+     //selects all buttons and gamecontainer
+{   alert('Welcome to the game');
+    const playButtons=document.querySelectorAll('button'); 
+    const gameContainer=document.querySelector('#gameContainer');
+
+    //creates p elements that will contain the below
+    const selections= document.createElement('p');
+    const roundResults =document.createElement('p');
+    const score=document.createElement('p');
+    const results= document.createElement('p');
+
+         //adding eventlisteners to all buttons at ones
+    playButtons.forEach((button)=>
+    {
+      button.addEventListener('click',(e)=>//the e, is the windows event
+      {
+        let playerSelection=button.id; // very important
+        let computerSelection = computerPlay()
+
+        selections.classList.add('selections');
+        selections.textContent ='You choose '+playerSelection +' and the computer chooses '+computerSelection+'.';
+        gameContainer.appendChild(selections);
+
+        if(playRound(playerSelection,computerSelection)==0)
+        {
+          roundResults.classList.add('roundResults');
+          roundResults.textContent='This is a tie! You both chose '+playerSelection+'.';
+          gameContainer.appendChild(roundResults);
+
+        }else if(playRound(playerSelection,computerSelection)==1)
+        {
+          roundResults.classList.add('roundResults');
+          roundResults.textContent='You win this round! You choose '+playerSelection+' and computer chose '+computerSelection+'.';
+          gameContainer.appendChild(roundResults);
+          playerScore++;
+
+        }else 
+        {
+          roundResults.classList.add('roundResults');
+          roundResults.textContent='You lost this round! You chose '+ playerSelection+' while computer chose '+computerSelection+'.';
+          gameContainer.appendChild(roundResults);
+          computerScore++;
+        };
+
+        score.classList.add('score');
+        score.textContent='Your score is '+playerScore+' . The computer\'s score is '+computerScore+'.';
+        gameContainer.appendChild(score);
+        
+        if (playerScore == 5 ) {
+            results.classList.add('results');
+            results.textContent = 'You Won! You won 5 games and the computer won '+ computerScore + ' games.';
+            gameContainer.appendChild(results);
+
+        } else if (computerScore == 5) {
+            results.classList.add('results');
+            results.textContent = 'You Lose!  You lost ' + playerScore + ' games and the computer won 5 games.';
+            gameContainer.appendChild(results);
+        };
+        
+      });
+
+    }); 
+}; 
+game();
+
+</script>
+</body>
+</html>
