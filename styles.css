@@ -2,7 +2,8 @@ body
 {
 	margin:0;
 	padding:0;
-	display:block
+	display:block;
+	background-color:rgba(2,50,89, 0.9);
 }
 
 h1, p{
@@ -54,4 +55,22 @@ background-color:crimson
 }
 #scissors:hover{
 	background-color:lightpink;
+}
+#gameContainer{
+	border:5px inset;
+	margin:0 200px;
+	height:fit-content;
+	min-width:350px;
+	text-align:center;
+
+}
+
+#gameContainer button{
+	margin-bottom:10px;
+	width:50%;
+	height:50px;
+	background-color:green;
+	font-size:large;
+	cursor: pointer;
+
 }
