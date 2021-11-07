@@ -3,7 +3,7 @@
 let rockbtn = $('#rock')
 let paperbtn = $('#paper')
 let scissorbtn = $('#scissors')
-let btns = [$('button')]
+//let btns = [$('button')]
 
 
 function getComp() {
@@ -31,7 +31,12 @@ function play(user, comp) {
 
 /*btns.forEach(btn => {
   btn.on('click',function(){
-    var value = $(this).val()
-    console.log(value)
+    //var value = $(this).val()
+    //console.log(value)
+    alert ('Hello')
   })
 })*/
+
+$('#rock').on('click', function(){
+  alert ('Hello')
+})
