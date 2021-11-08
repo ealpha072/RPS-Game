@@ -1,4 +1,4 @@
-//btns
+
 
 let rockbtn = $('#rock')
 let paperbtn = $('#paper')
@@ -37,6 +37,8 @@ function play(user, comp) {
   })
 })*/
 
-$('#rock').on('click', function(){
-  alert ('Hello')
+$( function(){
+  $('#rules').on('click', function(){
+    $('.rules-card').toggle('show')
+  })
 })
