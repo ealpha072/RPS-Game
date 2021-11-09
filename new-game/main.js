@@ -71,6 +71,7 @@ $(function () {
 
 	$('#restart').on('click',function(){
 		resetGame()
+		$(this).attr('disabled','')
 	})
 
 	btns.forEach((btn) => {
