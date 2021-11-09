@@ -18,26 +18,33 @@
 				</div>
 				<div class="card-body">
 					<button class="btn btn-success btn-sm" id="rules">Rules</button>
-					<div class="card rules-card" style="display: none; margin-top: 10px;">
-						<div class="card-header">
-							<h6>Rules</h6>
-						</div>
-						<div class="card-body">
-							<h5>Rock beats scissors</h5>
-							<h5>Scissors beats paper</h5>
-							<h5>Paper beats rock</h5>
+
+					<div class="form-row">
+						<div class="card col-6 rules-card" style="display: none; margin-top: 10px;">
+							<div class="card-header">
+								<h6>Rules</h6>
+							</div>
+							<div class="card-body">
+								<ul>
+									<li>First to five points wins</li>
+									<li>Rock beats scissors</li>
+									<li>Scissors beats paper</li>
+									<li>Paper beats rock</li>
+								</ul>
+							</div>
 						</div>
 					</div>
+					
 					<div class="card" style="margin-top: 10px;">
 						<div class="card-body row">
 							<div class="col-lg-4 col-md-4 col-sm-10" style="margin-bottom: 5px;">
-								<button class="btn btn-lg btn-primary btn-block">ROCK</button>
+								<button class="btn btn-lg btn-primary btn-block" value="rock" id="buttons">ROCK</button>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-10" style="margin-bottom: 5px;">
-								<button class="btn btn-lg btn-secondary btn-block">PAPER</button>
+								<button class="btn btn-lg btn-secondary btn-block" value="paper" id="buttons">PAPER</button>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-10" style="margin-bottom: 5px;">
-								<button class="btn btn-lg btn-info btn-block">SCISSORS</button>
+								<button class="btn btn-lg btn-info btn-block" value="scissors" id="buttons">SCISSORS</button>
 							</div>
 						</div>
 					</div>
@@ -50,10 +57,9 @@
 									<h5>Round Results</h5>
 								</div>
 								<div class="card-body">
-									<h5>User choice</h5>
-									<h5>Comp Choice</h5>
-									<h5>User score</h5>
-									<h5>Comp score</h5>
+									<h5>User: <span id="userchoice"></span></h5>
+									<h5>Comp: <span id="compchoice"></span></h5>
+									<h5>Round winner: <span id="roundwinner"></span></h5>
 								</div>
 							</div>
 						</div>
@@ -63,13 +69,16 @@
 									<h5>Game results</h5>
 								</div>
 								<div class="card-body">
-									<h5>Games Played: </h5>
-									<h5>Users score: </h5>
-									<h5>Comp score: </h5>
-									<h5>Winner: </h5>
+									<h5>Games Played: <span id="gamesplayed"></span></h5>
+									<h5>Users score: <span id="userscore"></span></h5>
+									<h5>Comp score: <span id="compscore"></span></h5>
+									<h5>Winner: <span id="winner"></span></h5>
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="restart">
+						<button class="btn btn-danger btn-lg" id="restart" disabled>RESTART GAME</button>
 					</div>
 				</div>
 			</div>
