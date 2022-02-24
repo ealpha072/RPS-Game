@@ -3,4 +3,3 @@ This is a rock paper scissors game where the player plays against the computer.I
 
 ### Live demo is at ---> https://ealpha072.github.io/rps-game/
 
-More to be added
